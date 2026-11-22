@@ -533,5 +533,27 @@
   "image": "img/e25.jpg",
   "imageCredit": "anthropic.com",
   "imagePage": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system"
+ },
+ {
+  "id": "i1",
+  "date": "2026-07",
+  "field": "software",
+  "title": "TEST: Bun rewritten in Rust",
+  "who": "Jarred Sumner (Bun)",
+  "big": "11 days",
+  "vs": "for ~535,000 lines of Zig",
+  "what": "Test submission for the entry bot. Will be removed.",
+  "ai": "64 parallel Claude agents ported the code.",
+  "sources": [
+   {
+    "label": "bun.com",
+    "url": "https://bun.com/blog/bun-in-rust"
+   }
+  ],
+  "issue": "https://github.com/woletee/fast-with-ai/issues/1",
+  "note": "Test entry",
+  "image": "img/i1.jpg",
+  "imageCredit": "bun.com",
+  "imagePage": "https://bun.com/blog/bun-in-rust"
  }
 ]
