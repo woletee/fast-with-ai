@@ -9,10 +9,6 @@ permissions:
   issues: write
   pages: write
 
-concurrency:
-  group: entries
-  cancel-in-progress: false
-
 jobs:
   check:
     if: >-
@@ -39,6 +35,9 @@ jobs:
       github.event.label.name == 'approved' &&
       contains(github.event.issue.labels.*.name, 'new-entry')
     runs-on: ubuntu-latest
+    concurrency:
+      group: add-entry-${{ github.event.issue.number }}
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -58,7 +57,7 @@ jobs:
           git add data/entries.json img/
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "Add entry from #$ISSUE"
-          git push
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
           gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" || true
       - name: Comment and close
         if: always()
