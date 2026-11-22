@@ -1,0 +1,75 @@
+name: Entries
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+
+concurrency:
+  group: entries
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: >-
+      (github.event.action == 'opened' || github.event.action == 'edited') &&
+      contains(github.event.issue.labels.*.name, 'new-entry') &&
+      github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate the suggestion
+        run: python scripts/entry_bot.py check "$GITHUB_EVENT_PATH"
+      - name: Comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body-file comment.md
+
+  add:
+    if: >-
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'approved' &&
+      contains(github.event.issue.labels.*.name, 'new-entry')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow==11.0.0
+      - name: Add the entry
+        id: add
+        run: python scripts/entry_bot.py add "$GITHUB_EVENT_PATH"
+      - name: Commit and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "fast-with-ai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/entries.json img/
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "Add entry from #$ISSUE"
+          git push
+          gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds" || true
+      - name: Comment and close
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          ADDED: ${{ steps.add.outcome }}
+        run: |
+          [ -f comment.md ] || echo "Something went wrong while adding this entry. A maintainer will take a look." > comment.md
+          gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body-file comment.md
+          if [ "$ADDED" = "success" ]; then
+            gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" --remove-label needs-review
+            gh issue close "$ISSUE" --repo "$GITHUB_REPOSITORY" --reason completed
+          fi

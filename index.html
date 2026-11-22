@@ -38,6 +38,10 @@ h1{font-family:var(--display);font-weight:200;letter-spacing:-.04em;
   font-size:clamp(3.4rem,13vw,11.5rem);line-height:.95;margin:24px 0 16px}
 .dek{display:flex;justify-content:space-between;align-items:baseline;gap:8px 24px;flex-wrap:wrap;margin-bottom:28px;font-size:14px}
 .dek p{margin:0}
+.dek-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.suggest{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.suggest:hover{background:var(--pill);color:var(--pill-fg)}
+.suggest:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
 .dek .stats{font-family:var(--mono);font-size:12px;color:var(--muted)}
 
 .bar{display:flex;justify-content:space-between;align-items:center;gap:10px 24px;flex-wrap:wrap;padding-block:10px;border-top:2px solid var(--line)}
@@ -87,7 +91,7 @@ h1{font-family:var(--display);font-weight:200;letter-spacing:-.04em;
   <h1>Fast, with AI</h1>
   <div class="dek">
     <p>Big things done fast with AI. How long, and what the AI did.</p>
-    <div class="stats" id="stats"></div>
+    <div class="dek-right"><div class="stats" id="stats"></div><a class="suggest" href="https://github.com/woletee/fast-with-ai/issues/new?template=new-entry.yml" target="_blank" rel="noopener">+ Suggest an entry</a></div>
   </div>
 
   <div class="bar">
@@ -103,95 +107,17 @@ h1{font-family:var(--display);font-weight:200;letter-spacing:-.04em;
   <div class="grid" id="grid"></div>
 
   <footer class="fine">
-    <span>Checked against sources, 22 Nov 2026.</span>
+    <span>Every entry is checked against its source before it goes up. <a href="https://github.com/woletee/fast-with-ai/issues/new?template=new-entry.yml" target="_blank" rel="noopener">Suggest one</a> in a few minutes.</span>
     <span>Images: each project's own, credited per card.</span>
   </footer>
 </div>
 
 <script>
-const E = [
- {y:2017,f:"math",t:"AlphaGo Zero learns Go",who:"DeepMind",big:"3 days",vs:"to beat the AlphaGo that beat Lee Sedol",
-  what:"Learned Go from the rules alone and won 100–0.",ai:"All of it, through self-play.",
-  src:[["DeepMind","https://deepmind.google/blog/alphago-zero-starting-from-scratch/"]]},
- {y:2017,f:"math",t:"AlphaZero masters chess",who:"DeepMind",big:"4 hours",vs:"of training to pass Stockfish",
-  what:"Beat Stockfish 8: 28 wins, 72 draws, no losses.",ai:"Learned chess from self-play, no human games.",
-  src:[["DeepMind","https://deepmind.google/blog/alphazero-shedding-new-light-on-chess-shogi-and-go/"]],flag:"Match settings were criticized"},
- {y:2020,f:"science",t:"Halicin, a new antibiotic",who:"MIT",big:"Days",vs:"to screen 107M molecules",
-  what:"Killed drug-resistant bacteria in mice.",ai:"Ranked molecules; the lab tested the top 23.",
-  src:[["MIT News","https://news.mit.edu/2020/artificial-intelligence-identifies-new-antibiotic-0220"]]},
- {y:2020,f:"science",t:"AlphaFold maps proteins",who:"DeepMind, EMBL-EBI",big:"1 year",vs:"to cover 200M proteins",
-  what:"Predicted the shape of nearly every known protein.",ai:"Predicted 3D shape from sequence. Its makers won a Nobel.",
-  src:[["DeepMind","https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/"]]},
- {y:2023,f:"science",t:"GraphCast forecasts weather",who:"Google DeepMind",big:"1 minute",vs:"for 10 days; supercomputers take hours",
-  what:"Beat the top forecast system on 90% of tests.",ai:"A neural net trained on decades of weather.",
-  src:[["DeepMind","https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/"]]},
- {y:2023,f:"science",t:"Burned scrolls, read",who:"Vesuvius Challenge",big:"11 months",vs:"after 2,000 unreadable years",
-  what:"Three students read 2,000 letters inside a sealed scroll.",ai:"Found faint ink in CT scans.",
-  src:[["Scroll Prize","https://scrollprize.org/grandprize"]]},
- {y:2023,f:"science",t:"2.2M new crystals",who:"Google DeepMind",big:"800 years",vs:"of discovery, by DeepMind's count",
-  what:"Predicted 380,000 likely stable materials.",ai:"Proposed and screened candidate materials.",
-  src:[["Nature","https://www.nature.com/articles/s41586-023-06735-9"],["critique","https://www.theregister.com/2024/04/11/google_deepmind_material_study/"]],flag:"Novelty disputed"},
- {y:2024,f:"software",t:"Amazon upgrades Java",who:"Amazon",big:"Hours",vs:"per app, down from 50 days",
-  what:"Upgraded half its Java systems in six months.",ai:"Rewrote code for Java 17.",
-  src:[["AWS","https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone"]],self:1},
- {y:2024,f:"science",t:"A protein nature never made",who:"EvolutionaryScale",big:"500M years",vs:"of evolution, simulated",
-  what:"A new glowing protein, 58% like any known one.",ai:"Designed the sequence.",
-  src:[["EvolutionaryScale","https://www.evolutionaryscale.ai/blog/esm3"]],flag:"Authors' estimate"},
- {y:2025,f:"math",t:"Math Olympiad gold",who:"Google DeepMind, OpenAI",big:"4.5 hours",vs:"a year after needing days",
-  what:"Solved 5 of 6 problems in contest time.",ai:"Wrote full proofs in plain language.",
-  src:[["DeepMind","https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/"]]},
- {y:2025,f:"science",t:"A decade, in two days",who:"Google, Imperial College",big:"2 days",vs:"vs 10 years in the lab",
-  what:"Matched an unpublished finding on how bacteria share genes.",ai:"Generated and ranked hypotheses.",
-  src:[["arXiv","https://arxiv.org/abs/2502.18864"]]},
- {y:2025,f:"software",t:"Airbnb's test migration",who:"Airbnb",big:"6 weeks",vs:"instead of 1.5 years",
-  what:"Moved 3,500 test files to a new framework.",ai:"Rewrote 97% of files.",
-  src:[["InfoQ","https://www.infoq.com/news/2025/03/airbnb-llm-test-migration/"]],self:1},
- {y:2025,f:"business",t:"Duolingo doubles its courses",who:"Duolingo",big:"1 year",vs:"for 148 courses; 100 took 12",
-  what:"Mostly beginner courses.",ai:"Drafted course content.",
-  src:[["Duolingo","https://investors.duolingo.com/news-releases/news-release-details/duolingo-launches-148-new-language-courses"]],self:1},
- {y:2025,f:"business",t:"A flight game, $1M",who:"Pieter Levels",big:"17 days",vs:"to a $1M yearly pace",
-  what:"A solo browser flight game paid for by ads.",ai:"Wrote most of the code.",
-  src:[["404 Media","https://404media.co/this-game-created-by-ai-vibe-coding-makes-50-000-a-month-yours-probably-wont"]],self:1,flag:"Run-rate, not cash"},
- {y:2025,f:"business",t:"Base44 sells for $80M",who:"Maor Shlomo",big:"6 months",vs:"from launch to exit",
-  what:"A bootstrapped app builder bought by Wix.",ai:"Wrote much of the product.",
-  src:[["TechCrunch","https://techcrunch.com/2025/06/18/six-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash"]]},
- {y:2025,f:"math",t:"Beating a 1969 record",who:"Google DeepMind",big:"56 years",vs:"since Strassen's algorithm",
-  what:"Multiplied 4×4 matrices in 48 steps, not 49.",ai:"Evolved code. Also saves 0.7% of Google's compute.",
-  src:[["DeepMind","https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"]]},
- {y:2025,f:"science",t:"An AI-found lung drug",who:"Insilico Medicine",big:"18 months",vs:"to a drug candidate, for $2.6M",
-  what:"Improved lung function in a Phase 2a trial.",ai:"Found the target and designed the molecule.",
-  src:[["Nature Medicine","https://pubmed.ncbi.nlm.nih.gov/40461817/"]],self:1},
- {y:2025,f:"software",t:"Seven hours of coding",who:"Rakuten, Claude Opus 4",big:"7 hours",vs:"in one run",
-  what:"Built a feature in a 12.5M-line codebase.",ai:"Coded and tested; a human guided now and then.",
-  src:[["Rakuten","https://www.anthropic.com/customers/rakuten"]],self:1},
- {y:2026,f:"software",t:"A C compiler that builds Linux",who:"Anthropic",big:"2 weeks",vs:"and $20k",
-  what:"100k lines of Rust that compile the Linux kernel.",ai:"16 Claude agents wrote almost all of it.",
-  src:[["Anthropic","https://www.anthropic.com/engineering/building-c-compiler"]],self:1,flag:"Not production-grade"}
- ,{y:2026,f:"software",t:"Claude Cowork ships",who:"Anthropic",big:"1.5 weeks",vs:"from start to launch",
-  what:"A desktop agent that works in your files.",ai:"Claude Code wrote nearly all of it.",
-  src:[["Axios","https://axios.com/2026/01/13/anthropic-claude-code-cowork-vibe-coding"]],self:1},
- {y:2026,f:"software",t:"Agents build a browser",who:"Cursor",big:"1 week",vs:"for 1M+ lines of code",
-  what:"A from-scratch browser engine that renders real sites, with glitches.",ai:"Hundreds of agents wrote the code in parallel.",
-  src:[["Simon Willison","https://simonwillison.net/2026/Jan/23/fastrender/"]],self:1,flag:"Disputed: build failures, Servo reuse claims"},
- {y:2026,f:"math",t:"An amateur cracks Erdős #1196",who:"Liam Price, GPT-5.4 Pro",big:"1 prompt",vs:"for a problem open 60 years",
-  what:"A 23-year-old with no math training posted a proof experts verified.",ai:"Found the proof, using an approach that surprised specialists.",
-  src:[["Scientific American","https://scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem"]]},
- {y:2026,f:"software",t:"Salesforce's API migration",who:"Salesforce",big:"13 days",vs:"vs 231 estimated person-days",
-  what:"Moved 33 API endpoints to a new architecture.",ai:"Claude Code did the migration from a shared rule set.",
-  src:[["Salesforce","https://www.salesforce.com/news/stories/how-engineering-became-agentic/"]],self:1},
- {y:2026,f:"software",t:"Bun rewritten in Rust",who:"Jarred Sumner (Bun)",big:"11 days",vs:"for ~535,000 lines of Zig",
-  what:"The JavaScript runtime moved to Rust and passed every test.",ai:"64 parallel Claude agents ported the code.",
-  src:[["Bun","https://bun.com/blog/bun-in-rust"]],self:1,flag:"Zig's creator called it unreviewed"},
- {y:2026,f:"software",t:"Copilot's runtime, ported",who:"GitHub",big:"14.5 weeks",vs:"for 800,000 lines of Rust",
-  what:"Rewrote Copilot's runtime while still shipping releases.",ai:"Copilot wrote most of it; one lead spent ~3 weeks.",
-  src:[["GitHub","https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/"]],self:1},
- {y:2026,f:"science",t:"A new DNA system found",who:"Anthropic",big:"21 hours",vs:"of searching by ~950 agents",
-  what:"Found an uncharacterized enzyme system in viral DNA.",ai:"Searched sequence databases; humans ran the lab tests.",
-  src:[["Anthropic","https://www.anthropic.com/research/claude-discovers-novel-enzyme-system"]],self:1,flag:"What it does is still unknown"}
-];
-const DATES=["2017-10","2017-12","2020-02","2020-11","2023-11","2024-02","2023-11","2024-08","2024-06","2025-07","2025-02","2025-03","2025-04","2025-02","2025-06","2025-05","2025-06","2025-05","2026-02","2026-01","2026-01","2026-04","2026-06","2026-07","2026-09","2026-09"];
-const PHOTOS={"2": {"img": "img/e02.jpg", "by": "news.mit.edu", "page": "https://news.mit.edu/2020/artificial-intelligence-identifies-new-antibiotic-0220", "fit": "cover"}, "5": {"img": "img/e05.jpg", "by": "scrollprize.org", "page": "https://scrollprize.org/grandprize", "fit": "cover"}, "7": {"img": "img/e07.jpg", "by": "aws.amazon.com", "page": "https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone/", "fit": "cover"}, "8": {"img": "img/e08.jpg", "by": "evolutionaryscale.ai", "page": "https://www.evolutionaryscale.ai/blog/esm3", "fit": "cover"}, "10": {"img": "img/e10.jpg", "by": "research.google", "page": "https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/", "fit": "cover"}, "14": {"img": "img/e14.jpg", "by": "base44.com", "page": "https://base44.com/", "fit": "cover"}, "17": {"img": "img/e17.jpg", "by": "anthropic.com", "page": "https://www.anthropic.com/customers/rakuten", "fit": "cover"}, "18": {"img": "img/e18.jpg", "by": "anthropic.com", "page": "https://www.anthropic.com/engineering/building-c-compiler", "fit": "cover"}, "19": {"img": "img/e19.jpg", "by": "claude.com", "page": "https://claude.com/product/cowork", "fit": "cover"}, "20": {"img": "img/e20.jpg", "by": "cursor.com", "page": "https://cursor.com/blog/scaling-agents", "fit": "cover"}, "21": {"img": "img/e21.jpg", "by": "scientificamerican.com", "page": "https://scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem", "fit": "cover"}, "22": {"img": "img/e22.jpg", "by": "salesforce.com", "page": "https://www.salesforce.com/news/stories/how-engineering-became-agentic/", "fit": "cover"}, "23": {"img": "img/e23.jpg", "by": "bun.com", "page": "https://bun.com/blog/bun-in-rust", "fit": "cover"}, "24": {"img": "img/e24.jpg", "by": "github.blog", "page": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/", "fit": "cover"}, "25": {"img": "img/e25.jpg", "by": "anthropic.com", "page": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system", "fit": "cover"}, "12": {"img": "img/e12.jpg", "by": "duolingo.com", "page": "https://www.duolingo.com/", "fit": "contain"}, "13": {"img": "img/e13.jpg", "by": "fly.pieter.com", "page": "https://fly.pieter.com/", "fit": "cover"}, "0": {"img": "img/e00.jpg", "by": "deepmind.google", "page": "https://deepmind.google/blog/alphago-zero-starting-from-scratch/", "fit": "cover"}, "1": {"img": "img/e01.jpg", "by": "deepmind.google", "page": "https://deepmind.google/blog/alphazero-shedding-new-light-on-chess-shogi-and-go/", "fit": "cover"}, "3": {"img": "img/e03.jpg", "by": "deepmind.google", "page": "https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/", "fit": "cover"}, "4": {"img": "img/e04.jpg", "by": "deepmind.google", "page": "https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/", "fit": "cover"}, "6": {"img": "img/e06.jpg", "by": "deepmind.google", "page": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/", "fit": "cover"}, "9": {"img": "img/e09.jpg", "by": "deepmind.google", "page": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/", "fit": "cover"}, "15": {"img": "img/e15.jpg", "by": "deepmind.google", "page": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/", "fit": "cover"}, "16": {"img": "img/e16.jpg", "by": "communities.springernature.com", "page": "https://communities.springernature.com/posts/ai-meets-ipf-taking-an-ai-designed-drug-from-target-discovery-to-phase-iia", "fit": "contain"}, "11": {"img": "img/e11.jpg", "by": "airbnb.tech", "page": "https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/", "fit": "contain"}};
-E.forEach((e,i)=>{e.d=DATES[i]; e.n=i; if(PHOTOS[i]){e.img=PHOTOS[i].img; e.photo=PHOTOS[i];}});
+let E=[];
+const REPO="https://github.com/woletee/fast-with-ai";
+function fromData(x,i){return {n:i,id:x.id,d:x.date,f:x.field,t:x.title,who:x.who,big:x.big,vs:x.vs,what:x.what,ai:x.ai,
+  src:(x.sources||[]).map(s=>[s.label,s.url]),flag:x.note,img:x.image,
+  photo:x.image?{by:x.imageCredit||'',page:x.imagePage||'',fit:x.imageFit||'cover'}:null};}
 const FIELD={science:"Science",software:"Software",math:"Math & games",business:"Business"};
 const PAL={
   science:["#123c69","#1f7a8c","#bfdbf7","#e1e5f2","#f2c14e"],
@@ -230,7 +156,7 @@ function art(e){
 }
 
 const grid=document.getElementById('grid');
-document.getElementById('stats').innerHTML=`${E.length} records · ${Object.keys(FIELD).length} fields<br>2017 – 2026`;
+
 function render(f){
   const rows=E.filter(e=>f==="all"||e.f===f).sort((a,b)=>b.d.localeCompare(a.d));
   grid.innerHTML=rows.map(e=>`<article class="card">
@@ -253,7 +179,12 @@ document.querySelectorAll('.pills button').forEach(b=>b.addEventListener('click'
   document.querySelectorAll('.pills button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));
   render(b.dataset.f);
 }));
-render("all");
+fetch("data/entries.json",{cache:"no-cache"}).then(r=>r.json()).then(data=>{
+  E=data.map(fromData);
+  const years=E.map(e=>+e.d.slice(0,4));
+  document.getElementById('stats').textContent=`${E.length} records · ${Math.min(...years)} – ${Math.max(...years)}`;
+  render("all");
+}).catch(()=>{grid.innerHTML='<p style="padding:16px">Could not load the list. Refresh to try again.</p>';});
 </script>
 </body>
 </html>

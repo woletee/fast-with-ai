@@ -1,0 +1,537 @@
+[
+ {
+  "id": "e00",
+  "date": "2017-10",
+  "field": "math",
+  "title": "AlphaGo Zero learns Go",
+  "who": "DeepMind",
+  "big": "3 days",
+  "vs": "to beat the AlphaGo that beat Lee Sedol",
+  "what": "Learned Go from the rules alone and won 100–0.",
+  "ai": "All of it, through self-play.",
+  "sources": [
+   {
+    "label": "DeepMind",
+    "url": "https://deepmind.google/blog/alphago-zero-starting-from-scratch/"
+   }
+  ],
+  "image": "img/e00.jpg",
+  "imageCredit": "deepmind.google",
+  "imagePage": "https://deepmind.google/blog/alphago-zero-starting-from-scratch/"
+ },
+ {
+  "id": "e01",
+  "date": "2017-12",
+  "field": "math",
+  "title": "AlphaZero masters chess",
+  "who": "DeepMind",
+  "big": "4 hours",
+  "vs": "of training to pass Stockfish",
+  "what": "Beat Stockfish 8: 28 wins, 72 draws, no losses.",
+  "ai": "Learned chess from self-play, no human games.",
+  "sources": [
+   {
+    "label": "DeepMind",
+    "url": "https://deepmind.google/blog/alphazero-shedding-new-light-on-chess-shogi-and-go/"
+   }
+  ],
+  "note": "Match settings were criticized",
+  "image": "img/e01.jpg",
+  "imageCredit": "deepmind.google",
+  "imagePage": "https://deepmind.google/blog/alphazero-shedding-new-light-on-chess-shogi-and-go/"
+ },
+ {
+  "id": "e02",
+  "date": "2020-02",
+  "field": "science",
+  "title": "Halicin, a new antibiotic",
+  "who": "MIT",
+  "big": "Days",
+  "vs": "to screen 107M molecules",
+  "what": "Killed drug-resistant bacteria in mice.",
+  "ai": "Ranked molecules; the lab tested the top 23.",
+  "sources": [
+   {
+    "label": "MIT News",
+    "url": "https://news.mit.edu/2020/artificial-intelligence-identifies-new-antibiotic-0220"
+   }
+  ],
+  "image": "img/e02.jpg",
+  "imageCredit": "news.mit.edu",
+  "imagePage": "https://news.mit.edu/2020/artificial-intelligence-identifies-new-antibiotic-0220"
+ },
+ {
+  "id": "e03",
+  "date": "2020-11",
+  "field": "science",
+  "title": "AlphaFold maps proteins",
+  "who": "DeepMind, EMBL-EBI",
+  "big": "1 year",
+  "vs": "to cover 200M proteins",
+  "what": "Predicted the shape of nearly every known protein.",
+  "ai": "Predicted 3D shape from sequence. Its makers won a Nobel.",
+  "sources": [
+   {
+    "label": "DeepMind",
+    "url": "https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/"
+   }
+  ],
+  "image": "img/e03.jpg",
+  "imageCredit": "deepmind.google",
+  "imagePage": "https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/"
+ },
+ {
+  "id": "e04",
+  "date": "2023-11",
+  "field": "science",
+  "title": "GraphCast forecasts weather",
+  "who": "Google DeepMind",
+  "big": "1 minute",
+  "vs": "for 10 days; supercomputers take hours",
+  "what": "Beat the top forecast system on 90% of tests.",
+  "ai": "A neural net trained on decades of weather.",
+  "sources": [
+   {
+    "label": "DeepMind",
+    "url": "https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/"
+   }
+  ],
+  "image": "img/e04.jpg",
+  "imageCredit": "deepmind.google",
+  "imagePage": "https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/"
+ },
+ {
+  "id": "e05",
+  "date": "2024-02",
+  "field": "science",
+  "title": "Burned scrolls, read",
+  "who": "Vesuvius Challenge",
+  "big": "11 months",
+  "vs": "after 2,000 unreadable years",
+  "what": "Three students read 2,000 letters inside a sealed scroll.",
+  "ai": "Found faint ink in CT scans.",
+  "sources": [
+   {
+    "label": "Scroll Prize",
+    "url": "https://scrollprize.org/grandprize"
+   }
+  ],
+  "image": "img/e05.jpg",
+  "imageCredit": "scrollprize.org",
+  "imagePage": "https://scrollprize.org/grandprize"
+ },
+ {
+  "id": "e06",
+  "date": "2023-11",
+  "field": "science",
+  "title": "2.2M new crystals",
+  "who": "Google DeepMind",
+  "big": "800 years",
+  "vs": "of discovery, by DeepMind's count",
+  "what": "Predicted 380,000 likely stable materials.",
+  "ai": "Proposed and screened candidate materials.",
+  "sources": [
+   {
+    "label": "Nature",
+    "url": "https://www.nature.com/articles/s41586-023-06735-9"
+   },
+   {
+    "label": "critique",
+    "url": "https://www.theregister.com/2024/04/11/google_deepmind_material_study/"
+   }
+  ],
+  "note": "Novelty disputed",
+  "image": "img/e06.jpg",
+  "imageCredit": "deepmind.google",
+  "imagePage": "https://deepmind.google/blog/millions-of-new-materials-discovered-with-deep-learning/"
+ },
+ {
+  "id": "e07",
+  "date": "2024-08",
+  "field": "software",
+  "title": "Amazon upgrades Java",
+  "who": "Amazon",
+  "big": "Hours",
+  "vs": "per app, down from 50 days",
+  "what": "Upgraded half its Java systems in six months.",
+  "ai": "Rewrote code for Java 17.",
+  "sources": [
+   {
+    "label": "AWS",
+    "url": "https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone"
+   }
+  ],
+  "image": "img/e07.jpg",
+  "imageCredit": "aws.amazon.com",
+  "imagePage": "https://aws.amazon.com/blogs/devops/amazon-q-developer-just-reached-a-260-million-dollar-milestone/"
+ },
+ {
+  "id": "e08",
+  "date": "2024-06",
+  "field": "science",
+  "title": "A protein nature never made",
+  "who": "EvolutionaryScale",
+  "big": "500M years",
+  "vs": "of evolution, simulated",
+  "what": "A new glowing protein, 58% like any known one.",
+  "ai": "Designed the sequence.",
+  "sources": [
+   {
+    "label": "EvolutionaryScale",
+    "url": "https://www.evolutionaryscale.ai/blog/esm3"
+   }
+  ],
+  "note": "Authors' estimate",
+  "image": "img/e08.jpg",
+  "imageCredit": "evolutionaryscale.ai",
+  "imagePage": "https://www.evolutionaryscale.ai/blog/esm3"
+ },
+ {
+  "id": "e09",
+  "date": "2025-07",
+  "field": "math",
+  "title": "Math Olympiad gold",
+  "who": "Google DeepMind, OpenAI",
+  "big": "4.5 hours",
+  "vs": "a year after needing days",
+  "what": "Solved 5 of 6 problems in contest time.",
+  "ai": "Wrote full proofs in plain language.",
+  "sources": [
+   {
+    "label": "DeepMind",
+    "url": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/"
+   }
+  ],
+  "image": "img/e09.jpg",
+  "imageCredit": "deepmind.google",
+  "imagePage": "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/"
+ },
+ {
+  "id": "e10",
+  "date": "2025-02",
+  "field": "science",
+  "title": "A decade, in two days",
+  "who": "Google, Imperial College",
+  "big": "2 days",
+  "vs": "vs 10 years in the lab",
+  "what": "Matched an unpublished finding on how bacteria share genes.",
+  "ai": "Generated and ranked hypotheses.",
+  "sources": [
+   {
+    "label": "arXiv",
+    "url": "https://arxiv.org/abs/2502.18864"
+   }
+  ],
+  "image": "img/e10.jpg",
+  "imageCredit": "research.google",
+  "imagePage": "https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/"
+ },
+ {
+  "id": "e11",
+  "date": "2025-03",
+  "field": "software",
+  "title": "Airbnb's test migration",
+  "who": "Airbnb",
+  "big": "6 weeks",
+  "vs": "instead of 1.5 years",
+  "what": "Moved 3,500 test files to a new framework.",
+  "ai": "Rewrote 97% of files.",
+  "sources": [
+   {
+    "label": "InfoQ",
+    "url": "https://www.infoq.com/news/2025/03/airbnb-llm-test-migration/"
+   }
+  ],
+  "image": "img/e11.jpg",
+  "imageCredit": "airbnb.tech",
+  "imagePage": "https://airbnb.tech/infrastructure/accelerating-large-scale-test-migration-with-llms/",
+  "imageFit": "contain"
+ },
+ {
+  "id": "e12",
+  "date": "2025-04",
+  "field": "business",
+  "title": "Duolingo doubles its courses",
+  "who": "Duolingo",
+  "big": "1 year",
+  "vs": "for 148 courses; 100 took 12",
+  "what": "Mostly beginner courses.",
+  "ai": "Drafted course content.",
+  "sources": [
+   {
+    "label": "Duolingo",
+    "url": "https://investors.duolingo.com/news-releases/news-release-details/duolingo-launches-148-new-language-courses"
+   }
+  ],
+  "image": "img/e12.jpg",
+  "imageCredit": "duolingo.com",
+  "imagePage": "https://www.duolingo.com/",
+  "imageFit": "contain"
+ },
+ {
+  "id": "e13",
+  "date": "2025-02",
+  "field": "business",
+  "title": "A flight game, $1M",
+  "who": "Pieter Levels",
+  "big": "17 days",
+  "vs": "to a $1M yearly pace",
+  "what": "A solo browser flight game paid for by ads.",
+  "ai": "Wrote most of the code.",
+  "sources": [
+   {
+    "label": "404 Media",
+    "url": "https://404media.co/this-game-created-by-ai-vibe-coding-makes-50-000-a-month-yours-probably-wont"
+   }
+  ],
+  "note": "Run-rate, not cash",
+  "image": "img/e13.jpg",
+  "imageCredit": "fly.pieter.com",
+  "imagePage": "https://fly.pieter.com/"
+ },
+ {
+  "id": "e14",
+  "date": "2025-06",
+  "field": "business",
+  "title": "Base44 sells for $80M",
+  "who": "Maor Shlomo",
+  "big": "6 months",
+  "vs": "from launch to exit",
+  "what": "A bootstrapped app builder bought by Wix.",
+  "ai": "Wrote much of the product.",
+  "sources": [
+   {
+    "label": "TechCrunch",
+    "url": "https://techcrunch.com/2025/06/18/six-month-old-solo-owned-vibe-coder-base44-sells-to-wix-for-80m-cash"
+   }
+  ],
+  "image": "img/e14.jpg",
+  "imageCredit": "base44.com",
+  "imagePage": "https://base44.com/"
+ },
+ {
+  "id": "e15",
+  "date": "2025-05",
+  "field": "math",
+  "title": "Beating a 1969 record",
+  "who": "Google DeepMind",
+  "big": "56 years",
+  "vs": "since Strassen's algorithm",
+  "what": "Multiplied 4×4 matrices in 48 steps, not 49.",
+  "ai": "Evolved code. Also saves 0.7% of Google's compute.",
+  "sources": [
+   {
+    "label": "DeepMind",
+    "url": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+   }
+  ],
+  "image": "img/e15.jpg",
+  "imageCredit": "deepmind.google",
+  "imagePage": "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/"
+ },
+ {
+  "id": "e16",
+  "date": "2025-06",
+  "field": "science",
+  "title": "An AI-found lung drug",
+  "who": "Insilico Medicine",
+  "big": "18 months",
+  "vs": "to a drug candidate, for $2.6M",
+  "what": "Improved lung function in a Phase 2a trial.",
+  "ai": "Found the target and designed the molecule.",
+  "sources": [
+   {
+    "label": "Nature Medicine",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40461817/"
+   }
+  ],
+  "image": "img/e16.jpg",
+  "imageCredit": "communities.springernature.com",
+  "imagePage": "https://communities.springernature.com/posts/ai-meets-ipf-taking-an-ai-designed-drug-from-target-discovery-to-phase-iia",
+  "imageFit": "contain"
+ },
+ {
+  "id": "e17",
+  "date": "2025-05",
+  "field": "software",
+  "title": "Seven hours of coding",
+  "who": "Rakuten, Claude Opus 4",
+  "big": "7 hours",
+  "vs": "in one run",
+  "what": "Built a feature in a 12.5M-line codebase.",
+  "ai": "Coded and tested; a human guided now and then.",
+  "sources": [
+   {
+    "label": "Rakuten",
+    "url": "https://www.anthropic.com/customers/rakuten"
+   }
+  ],
+  "image": "img/e17.jpg",
+  "imageCredit": "anthropic.com",
+  "imagePage": "https://www.anthropic.com/customers/rakuten"
+ },
+ {
+  "id": "e18",
+  "date": "2026-02",
+  "field": "software",
+  "title": "A C compiler that builds Linux",
+  "who": "Anthropic",
+  "big": "2 weeks",
+  "vs": "and $20k",
+  "what": "100k lines of Rust that compile the Linux kernel.",
+  "ai": "16 Claude agents wrote almost all of it.",
+  "sources": [
+   {
+    "label": "Anthropic",
+    "url": "https://www.anthropic.com/engineering/building-c-compiler"
+   }
+  ],
+  "note": "Not production-grade",
+  "image": "img/e18.jpg",
+  "imageCredit": "anthropic.com",
+  "imagePage": "https://www.anthropic.com/engineering/building-c-compiler"
+ },
+ {
+  "id": "e19",
+  "date": "2026-01",
+  "field": "software",
+  "title": "Claude Cowork ships",
+  "who": "Anthropic",
+  "big": "1.5 weeks",
+  "vs": "from start to launch",
+  "what": "A desktop agent that works in your files.",
+  "ai": "Claude Code wrote nearly all of it.",
+  "sources": [
+   {
+    "label": "Axios",
+    "url": "https://axios.com/2026/01/13/anthropic-claude-code-cowork-vibe-coding"
+   }
+  ],
+  "image": "img/e19.jpg",
+  "imageCredit": "claude.com",
+  "imagePage": "https://claude.com/product/cowork"
+ },
+ {
+  "id": "e20",
+  "date": "2026-01",
+  "field": "software",
+  "title": "Agents build a browser",
+  "who": "Cursor",
+  "big": "1 week",
+  "vs": "for 1M+ lines of code",
+  "what": "A from-scratch browser engine that renders real sites, with glitches.",
+  "ai": "Hundreds of agents wrote the code in parallel.",
+  "sources": [
+   {
+    "label": "Simon Willison",
+    "url": "https://simonwillison.net/2026/Jan/23/fastrender/"
+   }
+  ],
+  "note": "Disputed: build failures, Servo reuse claims",
+  "image": "img/e20.jpg",
+  "imageCredit": "cursor.com",
+  "imagePage": "https://cursor.com/blog/scaling-agents"
+ },
+ {
+  "id": "e21",
+  "date": "2026-04",
+  "field": "math",
+  "title": "An amateur cracks Erdős #1196",
+  "who": "Liam Price, GPT-5.4 Pro",
+  "big": "1 prompt",
+  "vs": "for a problem open 60 years",
+  "what": "A 23-year-old with no math training posted a proof experts verified.",
+  "ai": "Found the proof, using an approach that surprised specialists.",
+  "sources": [
+   {
+    "label": "Scientific American",
+    "url": "https://scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem"
+   }
+  ],
+  "image": "img/e21.jpg",
+  "imageCredit": "scientificamerican.com",
+  "imagePage": "https://scientificamerican.com/article/amateur-armed-with-chatgpt-vibe-maths-a-60-year-old-problem"
+ },
+ {
+  "id": "e22",
+  "date": "2026-06",
+  "field": "software",
+  "title": "Salesforce's API migration",
+  "who": "Salesforce",
+  "big": "13 days",
+  "vs": "vs 231 estimated person-days",
+  "what": "Moved 33 API endpoints to a new architecture.",
+  "ai": "Claude Code did the migration from a shared rule set.",
+  "sources": [
+   {
+    "label": "Salesforce",
+    "url": "https://www.salesforce.com/news/stories/how-engineering-became-agentic/"
+   }
+  ],
+  "image": "img/e22.jpg",
+  "imageCredit": "salesforce.com",
+  "imagePage": "https://www.salesforce.com/news/stories/how-engineering-became-agentic/"
+ },
+ {
+  "id": "e23",
+  "date": "2026-07",
+  "field": "software",
+  "title": "Bun rewritten in Rust",
+  "who": "Jarred Sumner (Bun)",
+  "big": "11 days",
+  "vs": "for ~535,000 lines of Zig",
+  "what": "The JavaScript runtime moved to Rust and passed every test.",
+  "ai": "64 parallel Claude agents ported the code.",
+  "sources": [
+   {
+    "label": "Bun",
+    "url": "https://bun.com/blog/bun-in-rust"
+   }
+  ],
+  "note": "Zig's creator called it unreviewed",
+  "image": "img/e23.jpg",
+  "imageCredit": "bun.com",
+  "imagePage": "https://bun.com/blog/bun-in-rust"
+ },
+ {
+  "id": "e24",
+  "date": "2026-09",
+  "field": "software",
+  "title": "Copilot's runtime, ported",
+  "who": "GitHub",
+  "big": "14.5 weeks",
+  "vs": "for 800,000 lines of Rust",
+  "what": "Rewrote Copilot's runtime while still shipping releases.",
+  "ai": "Copilot wrote most of it; one lead spent ~3 weeks.",
+  "sources": [
+   {
+    "label": "GitHub",
+    "url": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/"
+   }
+  ],
+  "image": "img/e24.jpg",
+  "imageCredit": "github.blog",
+  "imagePage": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/"
+ },
+ {
+  "id": "e25",
+  "date": "2026-09",
+  "field": "science",
+  "title": "A new DNA system found",
+  "who": "Anthropic",
+  "big": "21 hours",
+  "vs": "of searching by ~950 agents",
+  "what": "Found an uncharacterized enzyme system in viral DNA.",
+  "ai": "Searched sequence databases; humans ran the lab tests.",
+  "sources": [
+   {
+    "label": "Anthropic",
+    "url": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system"
+   }
+  ],
+  "note": "What it does is still unknown",
+  "image": "img/e25.jpg",
+  "imageCredit": "anthropic.com",
+  "imagePage": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system"
+ }
+]

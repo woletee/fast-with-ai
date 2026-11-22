@@ -1,0 +1,94 @@
+name: Suggest an entry
+description: Add something big that was done fast with AI. Takes about 3 minutes.
+title: "[Entry] "
+labels: ["new-entry", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for adding to the list. Keep each answer short: a few words or one sentence.
+        Every entry is checked against its source before it goes live. Once it's approved, the site updates on its own.
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: A few words naming what was done.
+      placeholder: Bun rewritten in Rust
+    validations:
+      required: true
+  - type: input
+    id: who
+    attributes:
+      label: Who did it
+      placeholder: Jarred Sumner (Bun)
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: When (year and month)
+      description: Format YYYY-MM
+      placeholder: 2026-07
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: Category
+      options:
+        - Science
+        - Software
+        - Math & games
+        - Business
+    validations:
+      required: true
+  - type: input
+    id: how_fast
+    attributes:
+      label: How long it took
+      placeholder: 11 days
+    validations:
+      required: true
+  - type: input
+    id: baseline
+    attributes:
+      label: Compared to
+      description: The old baseline or the scale, in a few words.
+      placeholder: for ~535,000 lines of Zig
+    validations:
+      required: true
+  - type: input
+    id: what
+    attributes:
+      label: What was done
+      description: One sentence.
+      placeholder: The JavaScript runtime moved to Rust and passed every test.
+    validations:
+      required: true
+  - type: input
+    id: ai_did
+    attributes:
+      label: What the AI did
+      description: One sentence. Only the part the AI did.
+      placeholder: 64 parallel Claude agents ported the code.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: The original announcement, paper or article. Its preview image becomes the card image.
+      placeholder: https://bun.com/blog/bun-in-rust
+    validations:
+      required: true
+  - type: input
+    id: source2
+    attributes:
+      label: Second source (optional)
+      description: Independent coverage helps it get approved faster.
+  - type: input
+    id: note
+    attributes:
+      label: Caveats (optional)
+      description: Anything disputed or qualified, in a few words.
+      placeholder: Zig's creator called it unreviewed
