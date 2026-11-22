@@ -103,7 +103,7 @@ h1{font-family:var(--display);font-weight:200;letter-spacing:-.04em;
   <div class="grid" id="grid"></div>
 
   <footer class="fine">
-    <span>Checked against sources, 22 Nov 2026. <span class="flag">Self-reported</span> = builder's own figure.</span>
+    <span>Checked against sources, 22 Nov 2026.</span>
     <span>Images: each project's own, credited per card.</span>
   </footer>
 </div>
@@ -238,7 +238,7 @@ function render(f){
     <div class="art">${e.img?`<img src="${esc(e.img)}" alt="Image for ${esc(e.t)}" class="${e.photo.fit}" loading="lazy" onerror="this.replaceWith(document.createRange().createContextualFragment(art(E[${e.n}])))">`:art(e)}</div>
     <div class="time"><b>${esc(e.big)}</b><span>${esc(e.vs)}</span></div>
     <h2>${esc(e.t)}</h2>
-    <details><summary><span>Read more ${e.self?'<span class="sr">· self-reported</span>':''}</span></summary>
+    <details><summary><span>Read more</span></summary>
       <div class="more">
         <span class="k">Who</span><span>${esc(e.who)}</span>
         <span class="k">Done</span><span>${esc(e.what)}</span>
